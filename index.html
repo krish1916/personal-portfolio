@@ -10,7 +10,7 @@
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Portfolio website complete</title>
+    <title>Krishnendu Portfolio</title>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 
@@ -217,11 +217,11 @@
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Send" class="contact__button button">
+                <form action="" class="contact__form" name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Name" class="contact__input">
+                    <input type="mail" name="Email" placeholder="Email" class="contact__input">
+                    <textarea name="Message" id="" cols="0" rows="10" class="contact__input"></textarea>
+                    <input type="submit" value="Send" class="contact__button button">
                 </form>
             </div>
         </section>
@@ -231,11 +231,11 @@
     <footer class="footer">
         <p class="footer__title">Krishnendu</p>
         <div class="footer__social">
-            <a href="#" class="footer__icon"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.facebook.com/krishnendu.dutta.1800?mibextid=ZbWKwL" class="footer__icon" target="_blank"><i class='bx bxl-facebook'></i></a>
             <!-- <a href="https://github.com/krish1916" class="footer__icon" target="_blank"></a><i class='bx bxl-github'></i></a> -->
             <a href="https://www.linkedin.com/in/krishnendu-dutta-85484a21b" class="footer__icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            <a href="#" class="footer__icon"><i class='bx bxl-instagram'></i></a>
-            <a href="#" class="footer__icon"><i class='bx bxl-twitter'></i></a>
+            <a href="https://instagram.com/krishnendu748?utm_source=qr&igshid=ZDc4ODBmNjlmNQ==" class="footer__icon" target="_blank"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="footer__icon" target="_blank"><i class='bx bxl-twitter'></i></a>
         </div>
        
     </footer>
@@ -248,6 +248,17 @@
             loop: true
         });
     </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyWD0Oc0a_4diS8bXGIq5aPn8RSbx-fpJV3b2eQ1tLZXVm8wDAjMk6kCvqRzRNyOU3xXQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
 
     <!--===== SCROLL REVEAL =====-->

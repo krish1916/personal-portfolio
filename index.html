@@ -217,11 +217,12 @@
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form" name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Name" class="contact__input">
-                    <input type="mail" name="Email" placeholder="Email" class="contact__input">
-                    <textarea name="Message" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="submit" value="Send" class="contact__button button">
+                <form action="https://formspree.io/f/xgejyorp"
+                method="POST" class="contact__form" >
+                    <input type="text" name="name" autocomplete="off" placeholder="Name" class="contact__input" required>
+                    <input type="mail" autocomplete="off" name="email" placeholder="Email" class="contact__input" required>
+                    <textarea name="message" autocomplete="off" id="" cols="0" rows="10" class="contact__input"></textarea required>
+                    <button type="submit" class="contact__button button">Send</button>
                 </form>
             </div>
         </section>
@@ -248,7 +249,7 @@
             loop: true
         });
     </script>
-    <script>
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyWD0Oc0a_4diS8bXGIq5aPn8RSbx-fpJV3b2eQ1tLZXVm8wDAjMk6kCvqRzRNyOU3xXQ/exec'
         const form = document.forms['submit-to-google-sheet']
       
@@ -258,7 +259,7 @@
             .then(response => console.log('Success!', response))
             .catch(error => console.error('Error!', error.message))
         })
-      </script>
+      </script> -->
 
 
     <!--===== SCROLL REVEAL =====-->
